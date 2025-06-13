@@ -1,0 +1,325 @@
+/* Admin Page Specific Styles */
+.admin-section {
+    /* background-color: var(--card-bg-color-hover); */
+}
+
+.admin-section h2 {
+    text-align: center;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.admin-section>p {
+    /* Paragraph after h2 */
+    text-align: center;
+    color: var(--muted-text-color);
+    margin-bottom: 2.5rem;
+}
+
+
+#addPropertyForm {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--card-bg-color);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 20px var(--shadow-color);
+}
+
+#addPropertyForm fieldset {
+    border: 1px solid var(--accent-color);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    margin-bottom: 2.5rem;
+    /* Increased margin for better separation */
+}
+
+#addPropertyForm legend {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    padding: 0 0.5rem;
+    margin-left: 1rem;
+}
+
+/* Specific adjustments for admin form textareas */
+#addPropertyForm .form-group textarea {
+    min-height: 100px;
+    /* Default for admin page */
+}
+
+#addPropertyForm textarea#propertyDescription {
+    min-height: 150px;
+    /* Larger description box */
+}
+
+#addPropertyForm textarea#propertyGalleryImageURLs,
+#addPropertyForm textarea#keyFeatures {
+    font-size: 0.95rem;
+    min-height: 80px;
+}
+
+/* New Custom File Upload Styles */
+.custom-file-upload-new {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed var(--input-border-color);
+    border-radius: var(--border-radius);
+    padding: 2rem 1rem;
+    cursor: pointer;
+    background-color: var(--card-bg-color-hover);
+    text-align: center;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    min-height: 90px;
+    /* Ensure a decent clickable area */
+    margin-bottom: 0.75rem;
+    /* Space before URL fallback */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    /* Subtle shadow like in image */
+}
+
+.custom-file-upload-new:hover {
+    border-color: var(--primary-color);
+    background-color: var(--card-bg-color);
+}
+
+.custom-file-upload-new--icon {
+    margin-bottom: 0.75rem;
+}
+
+.custom-file-upload-new--icon svg {
+    width: 50px;
+    /* Adjust size as needed */
+    height: 50px;
+    fill: var(--muted-text-color);
+    /* Color of the icon */
+    transition: fill 0.3s ease;
+}
+
+.custom-file-upload-new:hover .custom-file-upload-new--icon svg {
+    fill: var(--primary-color);
+}
+
+.custom-file-upload-new--text {
+    color: var(--muted-text-color);
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.custom-file-upload-new:hover .custom-file-upload-new--text {
+    color: var(--primary-color);
+}
+
+.custom-file-upload-new input[type="file"] {
+    display: none;
+    /* Hide the actual file input */
+}
+
+
+/* Style for URL input fields that are fallbacks to file uploads */
+.form-control-url-fallback {
+    margin-top: 0.75rem;
+    /* Add some space below the file input or custom uploader */
+}
+
+/* Style for displaying uploaded filename */
+.uploaded-filename-display {
+    font-size: 0.85rem;
+    color: var(--muted-text-color);
+    margin-top: 0.5rem;
+    /* Space above filename display */
+    margin-bottom: 0.25rem;
+    /* Space between filename and URL input */
+    display: none;
+    /* Hidden by default */
+    word-break: break-all;
+    /* Prevent long filenames from breaking layout */
+    padding: 0.25rem 0;
+}
+
+
+#addPropertyForm .btn-primary {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 1.5rem auto 0;
+    /* Increased top margin */
+    padding: 1rem;
+    font-size: 1.1rem;
+}
+
+#form-status-admin {
+    margin-top: 1.5rem;
+}
+
+#form-status-admin.form-status-message:not(:empty) {
+    display: block;
+    padding: 1rem;
+    text-align: center;
+}
+
+#form-status-admin.form-status-message:empty {
+    display: none;
+}
+
+
+/* File Preview Styles */
+.file-preview-container {
+    margin-top: 1rem;
+    /* border: 1px solid var(--accent-color-darker); */
+    padding: 0.5rem;
+    /* border-radius: var(--border-radius); */
+    /* background-color: var(--card-bg-color-hover); */
+    min-height: 50px;
+    /* So it's visible even when empty */
+}
+
+.file-preview-container:empty {
+    padding: 0;
+    border: none;
+    min-height: 0;
+    margin-top: 0;
+}
+
+.file-preview-container img,
+/* General style for single image preview */
+.file-preview-container video {
+    max-width: 100%;
+    border-radius: calc(var(--border-radius) - 2px);
+    display: block;
+}
+
+.file-preview-container img {
+    width: auto;
+    max-height: 90px;
+    min-height: 60px;
+    object-fit: cover;
+}
+
+.file-preview-container img:last-child {
+    margin-bottom: 0.5rem;
+    /* Ensure consistent bottom margin if it's the only one */
+}
+
+
+.file-preview-container video {
+    max-height: 250px;
+    background-color: #000;
+}
+
+.gallery-preview {
+    /* Container for multiple gallery images */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    /* Increased gap for better spacing */
+}
+
+.gallery-preview img {
+    /* Styles for individual gallery images */
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    /* Cover the area, cropping if necessary */
+    border-radius: calc(var(--border-radius) - 4px);
+    /* Slightly smaller radius for thumbnails */
+    border: 1px solid var(--accent-color);
+    /* Subtle border for each thumbnail */
+    /* Removed flex properties, relying on fixed width/height and gap */
+}
+
+
+/* Admin Manage Properties Section */
+.admin-property-grid {
+    /* Uses .property-grid global styles */
+    /* Add any specific overrides here if needed */
+}
+
+.admin-property-grid .property-card {
+    /* Ensure cards have enough space for two buttons if needed */
+}
+
+.admin-property-grid .property-card-actions {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 0.5rem; /* Space between buttons */
+    padding: 0.5rem 1.25rem 1.25rem;
+    margin-top: auto;
+}
+
+.admin-property-grid .property-card-actions .btn {
+    width: auto;
+    display: block;
+    text-align: center;
+}
+
+.btn-delete {
+    background-color: var(--error-bg-color);
+    color: var(--error-text-color);
+    border: 1px solid var(--error-border-color);
+    font-weight: 500; /* Match other buttons */
+}
+
+.btn-delete:hover {
+    background-color: var(--error-text-color);
+    color: var(--light-text-color);
+    border-color: var(--error-text-color);
+}
+
+#admin-action-status.form-status-message:not(:empty) {
+    display: block;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+#admin-action-status.form-status-message:empty {
+    display: none;
+}
+
+
+/* Responsive adjustments for admin form */
+@media (max-width: 768px) {
+    #addPropertyForm {
+        padding: 1.5rem;
+    }
+
+    #addPropertyForm legend {
+        font-size: 1.2rem;
+    }
+
+    .custom-file-upload-new {
+        padding: 1.5rem 0.5rem;
+        min-height: 120px;
+    }
+
+    .custom-file-upload-new--icon svg {
+        width: 40px;
+        height: 40px;
+    }
+
+    .custom-file-upload-new--text {
+        font-size: 0.9rem;
+    }
+
+    .file-preview-container img {
+        /* Single image preview on mobile */
+        max-height: 150px;
+        min-height: 80px;
+    }
+
+    .gallery-preview img {
+        /* Gallery images on mobile */
+        width: 80px;
+        height: 80px;
+    }
+
+    .uploaded-filename-display {
+        font-size: 0.8rem;
+    }
+
+    .admin-property-grid .property-card-actions {
+        flex-direction: column; /* Ensure buttons stack on mobile */
+    }
+}
